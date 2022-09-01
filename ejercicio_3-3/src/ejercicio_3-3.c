@@ -38,9 +38,6 @@ int main(void) {
 		printf("El numero %d es impar.", numero);
 	}
 
-
-
-
 	return EXIT_SUCCESS;
 }
 
