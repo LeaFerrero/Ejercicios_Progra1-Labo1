@@ -1,0 +1,54 @@
+/*
+ ============================================================================
+ Name        : ejercicio_1-2.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+
+Ejercicio 1-2: ingresar 3 números y mostrar cuál de los tres es el mayor.
+Ejemplo: Si ingresamos 5, 9 y 3 el programa mostrará: “El mayor de los números es el
+segundo: 9”
+
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+
+	setbuf(stdout, NULL);
+
+	int primerNumero;
+	int segundoNumero;
+	int tercerNumero;
+
+	printf("Ingrese el primer numero: ");
+	scanf("%d", &primerNumero);
+
+	printf("Ingrese el segundo numero: ");
+	scanf("%d", &segundoNumero);
+
+	printf("Ingrese el tercer numero: ");
+	scanf("%d", &tercerNumero);
+
+	if(primerNumero > segundoNumero && primerNumero > tercerNumero)
+	{
+		printf("El mayor de los números es el primero: %d", primerNumero);
+	}
+	else
+	{
+		if(segundoNumero > tercerNumero && segundoNumero >= primerNumero)
+		{
+			printf("El mayor de los números es el seguundo: %d", segundoNumero);
+		}
+		else
+		{
+			printf("El mayor de los números es el tercero: %d", tercerNumero);
+		}
+	}
+
+
+	return EXIT_SUCCESS;
+}

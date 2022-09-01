@@ -1,0 +1,22 @@
+/*
+ ============================================================================
+ Name        : clase_1.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#define NUM 33
+
+int main(void) {
+
+	setbuf(stdout, NULL);
+
+	printf("El númmro es: %d", NUM);
+
+	return EXIT_SUCCESS;
+}

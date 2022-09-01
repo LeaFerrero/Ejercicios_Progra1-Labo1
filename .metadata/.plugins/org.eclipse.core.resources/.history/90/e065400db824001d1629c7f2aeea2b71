@@ -1,0 +1,93 @@
+/*
+ ============================================================================
+ Name        : ejercicio_2-2.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+
+Ejercicio 2-2: Ingresar números enteros, hasta que el usuario pida. Mostrar:
+a) El promedio de los positivos y su mínimo.
+b) El promedio de los negativos y su máximo.
+
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+
+	setbuf(stdout, NULL);
+	int numeroIngresado;
+	char respuesta;
+	int acumuladorPositivos;
+	int acumuladorNegativos;
+	int contadorPositivos;
+	int contadorNegativos;
+	int flagPositivos;
+	int flagNegativos;
+	int minPositivo;
+	int maxNegativo;
+	float promedioPositivos;
+	float promedioNegativos;
+
+	acumuladorPositivos = 0;
+	acumuladorNegativos = 0;
+	contadorPositivos = 0;
+	contadorNegativos = 0;
+	flagPositivos = 0;
+	flagNegativos = 0;
+
+	respuesta = 's';
+
+	while(respuesta != 's')
+	{
+		printf("Ingrese un numero entero: ");
+		scanf("%d", &numeroIngresado);
+
+		if(numeroIngresado > 0)
+		{
+			acumuladorPositivos += numeroIngresado;
+			contadorPositivos ++;
+
+			if(flagPositivos == 0 || numeroIngresado < minPositivo)
+			{
+				minPositivo = numeroIngresado;
+				flagPositivos = 1;
+			}
+		}
+		else
+		{
+			acumuladorNegativos += numeroIngresado;
+			contadorNegativos ++;
+
+			if(flagNegativos == 0 || numeroIngresado > maxNegativo)
+			{
+				maxNegativo = numeroIngresado;
+				flagNegativos = 1;
+			}
+		}
+
+		printf("Seguir ingresando? s para si, n para no:");
+		scanf("%s", &respuesta);
+	}
+
+	if(contadorPositivos > 0)
+	{
+		promedioPositivos = (float)acumuladorPositivos / contadorPositivos;
+
+		printf("El promedio de los positivos es: %.2f", promedioPositivos);
+		printf("El minimo de los positivos es: %d", minPositivo);
+	}
+
+	if(contadorNegativos > 0)
+	{
+		promedioNegativos = (float)acumuladorNegativos / contadorNegativos;
+
+		printf("El promedio de los negativos es: %.2f", promedioNegativos);
+		printf("El maximo de los negativos es: %d", maxNegativo);
+	}
+
+	return EXIT_SUCCESS;
+}

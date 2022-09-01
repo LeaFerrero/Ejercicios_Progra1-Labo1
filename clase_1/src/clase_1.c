@@ -1,0 +1,31 @@
+/*
+ ============================================================================
+ Name        : clase_1.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#define NUM 33
+
+int main(void) {
+
+	setbuf(stdout, NULL);
+
+	int a;
+	int b;
+	int resultdo;
+
+	a = 1;
+	b = 0;
+
+	resultdo = a && b;
+
+	printf("El reultado de a interseccion b es: %d", resultdo);
+
+	return EXIT_SUCCESS;
+}
