@@ -182,12 +182,8 @@ int main(void) {
 			montoConDescuento = (float)totalLibretas - montoDescontado;
 
 			printf("\nEl precio de las libretas con un descuento del 10 porciento es de: %.2f.", montoConDescuento);
-
 		}
-		else
-		{
 
-		}
 	}
 
 	return EXIT_SUCCESS;
