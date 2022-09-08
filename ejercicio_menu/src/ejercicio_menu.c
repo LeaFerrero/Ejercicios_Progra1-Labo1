@@ -22,6 +22,7 @@ Nota:
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "menu.h"
 
 int main(void) {
 
@@ -38,14 +39,8 @@ int main(void) {
 
 	do
 	{
-		printf("\n\nMENU");
-		printf("\na-Iniciar");
-		printf("\nb-Procesar");
-		printf("\nc-Finalizar");
-		printf("\nd-Salir");
-		printf("\nIngrese una opcion: ");
-		fflush(stdin);
-		scanf("%c", &opcion);
+
+		opcion = menu();
 
 		switch(opcion)
 		{
