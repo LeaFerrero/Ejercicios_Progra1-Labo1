@@ -50,7 +50,7 @@ float realizarDescuento(int numero1)
 
 	descuento = 5;
 
-	valorDescontado = (float)numero1 * descuento /100;
+	valorDescontado = (float)numero1 * descuento / 100;
 	valorConDescuento = (float)numero1 - valorDescontado;
 
 	return valorConDescuento;
