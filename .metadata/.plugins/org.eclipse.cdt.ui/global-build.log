@@ -1,51 +1,6 @@
-10:07:27 **** Incremental Build of configuration Debug for project ejercicio_4-3 ****
+Info: Nothing to build for ejercicio_4-4
+Info: Nothing to build for ejercicio_4-4
+21:23:31 **** Incremental Build of configuration Debug for project ejercicio_4-4 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validacion.o" "..\\src\\validacion.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_4-3.o" "..\\src\\ejercicio_4-3.c" 
-gcc -o ejercicio_4-3.exe "src\\conversor.o" "src\\ejercicio_4-3.o" "src\\validacion.o" 
-10:07:38 **** Incremental Build of configuration Debug for project ejercicio_4-1 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_4-1.o" "..\\src\\ejercicio_4-1.c" 
-gcc -o ejercicio_4-1.exe "src\\ejercicio_4-1.o" 
-Info: Nothing to build for ejercicio_4-1
-Info: Nothing to build for ejercicio_4-3
-10:08:50 **** Incremental Build of configuration Debug for project ejercicio_4-3 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_4-3.o" "..\\src\\ejercicio_4-3.c" 
-gcc -o ejercicio_4-3.exe "src\\conversor.o" "src\\ejercicio_4-3.o" "src\\validacion.o" 
-10:09:39 **** Incremental Build of configuration Debug for project ejercicio_4-3 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validacion.o" "..\\src\\validacion.c" 
-gcc -o ejercicio_4-3.exe "src\\conversor.o" "src\\ejercicio_4-3.o" "src\\validacion.o" 
-10:11:05 **** Incremental Build of configuration Debug for project ejercicio_4-3 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validacion.o" "..\\src\\validacion.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_4-3.o" "..\\src\\ejercicio_4-3.c" 
-gcc -o ejercicio_4-3.exe "src\\conversor.o" "src\\ejercicio_4-3.o" "src\\validacion.o" 
-10:11:43 **** Incremental Build of configuration Debug for project ejercicio_4-3 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_4-3.o" "..\\src\\ejercicio_4-3.c" 
-gcc -o ejercicio_4-3.exe "src\\conversor.o" "src\\ejercicio_4-3.o" "src\\validacion.o" 
-10:12:14 **** Incremental Build of configuration Debug for project ejercicio_4-3 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_4-3.o" "..\\src\\ejercicio_4-3.c" 
-gcc -o ejercicio_4-3.exe "src\\conversor.o" "src\\ejercicio_4-3.o" "src\\validacion.o" 
-c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file ejercicio_4-3.exe: Permission denied
-collect2.exe: error: ld returned 1 exit status
-10:12:24 **** Incremental Build of configuration Debug for project ejercicio_4-3 ****
-Info: Internal Builder is used for build
-gcc -o ejercicio_4-3.exe "src\\conversor.o" "src\\ejercicio_4-3.o" "src\\validacion.o" 
-10:13:42 **** Incremental Build of configuration Debug for project ejercicio_4-3 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_4-3.o" "..\\src\\ejercicio_4-3.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\conversor.o" "..\\src\\conversor.c" 
-gcc -o ejercicio_4-3.exe "src\\conversor.o" "src\\ejercicio_4-3.o" "src\\validacion.o" 
-10:14:19 **** Incremental Build of configuration Debug for project ejercicio_4-3 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_4-3.o" "..\\src\\ejercicio_4-3.c" 
-gcc -o ejercicio_4-3.exe "src\\conversor.o" "src\\ejercicio_4-3.o" "src\\validacion.o" 
-Info: Nothing to build for ejercicio_4-3
-10:15:31 **** Incremental Build of configuration Debug for project ejercicio_4-3 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validacion.o" "..\\src\\validacion.c" 
-gcc -o ejercicio_4-3.exe "src\\conversor.o" "src\\ejercicio_4-3.o" "src\\validacion.o" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o ejercicio_4-4.exe "src\\ejercicio_4-4.o" "src\\menus.o" 
