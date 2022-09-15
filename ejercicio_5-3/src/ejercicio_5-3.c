@@ -1,14 +1,15 @@
 /*
  ============================================================================
- Name        : ejercicio_5-2.c
+ Name        : ejercicio_5-3.c
  Author      : 
  Version     :
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
  ============================================================================
 
- Ejercicio 5-2: Hacer una función que calcule el promedio de los valores del Array que
-recibe y me devuelva el promedio.
+Ejercicio 5-3: Realizar una función que reciba como parámetros un array de enteros y
+un entero por referencia. La función calculara el máximo valor de ese array y utilizara
+el valor por referencia para retornar ese valor.
 
  */
 
@@ -17,7 +18,7 @@ recibe y me devuelva el promedio.
 
 #define TAM 5
 
-float promediarInt(int*, int);
+void calcularMaximo(int*, int, int*);
 
 int main(void) {
 
@@ -25,7 +26,7 @@ int main(void) {
 
 	int arrayInt[TAM];
 	int i;
-	float promedio;
+	int maximo;
 
 	for(i=0; i<TAM; i++)
 	{
@@ -33,25 +34,24 @@ int main(void) {
 		scanf("%d", &arrayInt[i]);
 	}
 
-	promedio = promediarInt(arrayInt, TAM);
+	calcularMaximo(arrayInt, TAM, &maximo);
 
-	printf("El promedio es: %.2f", promedio);
+	printf("El valor maximo es: %d", maximo);
 
-	return EXIT_SUCCESS;
+	EXIT_SUCCESS;
 }
 
-float promediarInt(int* array, int tam)
+void calcularMaximo(int* arrayInt, int tam, int* maximo)
 {
 	int i;
-	int suma;
-	float promedio;
+
+	*maximo = arrayInt[0];
 
 	for(i=0; i<tam; i++)
 	{
-		suma += array[i];
+		if(arrayInt[i] > *maximo)
+		{
+			*maximo = arrayInt[i];
+		}
 	}
-
-	promedio = (float)suma / tam;
-
-	return promedio;
 }
