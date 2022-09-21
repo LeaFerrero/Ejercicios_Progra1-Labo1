@@ -1,27 +1,7 @@
-20:51:29 **** Incremental Build of configuration Debug for project ejercicio_5-5 ****
+11:56:48 **** Incremental Build of configuration Debug for project ejercicio_7-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_5-5.o" "..\\src\\ejercicio_5-5.c" 
-gcc -o ejercicio_5-5.exe "src\\ejercicio_5-5.o" 
-Info: Nothing to build for ejercicio_5-5
-20:53:01 **** Incremental Build of configuration Debug for project ejercicio_5-5 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_5-5.o" "..\\src\\ejercicio_5-5.c" 
-gcc -o ejercicio_5-5.exe "src\\ejercicio_5-5.o" 
-20:54:50 **** Incremental Build of configuration Debug for project ejercicio_5-5 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_5-5.o" "..\\src\\ejercicio_5-5.c" 
-gcc -o ejercicio_5-5.exe "src\\ejercicio_5-5.o" 
-20:56:37 **** Incremental Build of configuration Debug for project ejercicio_5-5 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_5-5.o" "..\\src\\ejercicio_5-5.c" 
-gcc -o ejercicio_5-5.exe "src\\ejercicio_5-5.o" 
-Info: Nothing to build for ejercicio_5-5
-20:59:44 **** Incremental Build of configuration Debug for project ejercicio_5-5 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_5-5.o" "..\\src\\ejercicio_5-5.c" 
-gcc -o ejercicio_5-5.exe "src\\ejercicio_5-5.o" 
-21:00:28 **** Incremental Build of configuration Debug for project ejercicio_5-5 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_5-5.o" "..\\src\\ejercicio_5-5.c" 
-gcc -o ejercicio_5-5.exe "src\\ejercicio_5-5.o" 
-Info: Nothing to build for ejercicio_5-5
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_7-2.o" "..\\src\\ejercicio_7-2.c" 
+gcc -o ejercicio_7-2.exe "src\\ejercicio_7-2.o" 
+Info: Nothing to build for ejercicio_7-1
+Info: Nothing to build for ejercicio_7-2
+Info: Nothing to build for ejercicio_7-2

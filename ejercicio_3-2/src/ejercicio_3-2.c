@@ -29,6 +29,7 @@ int main(void) {
 	return EXIT_SUCCESS;
 }
 
+
 float pedirNumeroFlotante(void)
 {
 	float numero;

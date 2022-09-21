@@ -17,30 +17,65 @@ repetitivas)
 
 #include <stdio.h>
 #include <stdlib.h>
-#define CAN 10
+#define CAN 5
 
 int main(void) {
 
 	setbuf(stdout, NULL);
 
-	int numeros[CAN];
+	int arrayInt[CAN];
 	int i;
 	int j;
+	int aux;
 
 	for(i = 0; i < CAN; i++)
 	{
 		printf("Ingrese un numero entero: ");
-		scanf("%d", &numeros[i]);
+		scanf("%d", &arrayInt[i]);
 	}
 
 	for(i = 0; i < CAN - 1; i++)
 	{
-		for(j = i + 1; i < CAN; i++)
+		for(j = i + 1; j < CAN; j++)
 		{
-			if
+			if(arrayInt[i] > 0)
+			{
+				if(arrayInt[i] > arrayInt[j])
+				{
+					aux = arrayInt[i];
+					arrayInt[i] = arrayInt[j];
+					arrayInt[j] = aux;
+				}
+			}
+			if(arrayInt[i] < 0)
+			{
+				if(arrayInt[i] < arrayInt[j])
+				{
+					aux = arrayInt[i];
+					arrayInt[i] = arrayInt[j];
+					arrayInt[j] = aux;
+				}
+			}
 		}
 	}
 
+	for(i = 0; i < CAN; i++)
+	{
+		if(arrayInt[i] > 0)
+		{
+			printf("%d ", arrayInt[i]);
+		}
+	}
+
+	printf("\n");
+
+	for(i = 0; i < CAN; i++)
+	{
+		if(arrayInt[i] < 0)
+		{
+			printf("%d ", arrayInt[i]);
+		}
+	}
 
 	return EXIT_SUCCESS;
 }
