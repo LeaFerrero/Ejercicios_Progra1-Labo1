@@ -10,526 +10,915 @@
 #include <string.h>
 #include <ctype.h>
 
-/// \fn int myGets(char*, int)
-/// @brief Lee del buffer de entrada hasta que encuantra un '\n' o hasta que haya copiado en cadena
-/// un valor maximo de 'longitud - 1' caracteres.
+/// @fn void primeraMayuscula(char[])
+/// @brief Lowercase the entire string, then capitalize the first letter of the string and the first letter following a space
 ///
-/// @param cadena Array donde se cargar el texto ingresado
-/// @param longitud Longitud que define el tamaño de cadena
-/// @return Retorna 1 si se obtiene una cadena y 0 si no
-int myGets(char* cadena, int longitud)
+/// @param str which is going to capitalize the first letter.
+void format_Name(char* str)
 {
-	int retorno;
+	int i;
+	int len;
+	strlwr(str);
+	str[0] = toupper(str[0]);
 
-	retorno = 0;
-	char bufferString[5099];
+	len = strlen(str);
 
-	if(cadena != NULL && longitud > 0)
+	for(i = 0; i < len; i++ )
 	{
-		fflush(stdin);
-		if(fgets(bufferString, sizeof(bufferString), stdin) != NULL)
+		if(str[i] == ' ')
 		{
-			if(bufferString[strnlen(bufferString, sizeof(bufferString)) - 1] == '\n')
+			str[i+1] = toupper(str[i+1]);
+		}
+	}
+}
+
+/// \fn int myGets(char*, int)
+/// @brief Read from the input buffer until it finds a '\n' or until it has copied to str
+/// a max value of 'len - 1' characters.
+///
+/// @param str Array where the entered text will be loaded
+/// @param len len which defines the size of str
+/// @return Returns -1 if there is an error, a  1 if the sitring is obteined and 0 if not
+int myGets(char* str, int len)
+{
+	int rtn;
+	char aux[5099];
+
+	rtn = -1;
+
+	if(str != NULL && len > 0)
+	{
+		rtn = 0;
+		fflush(stdin);
+
+		if(fgets(aux, sizeof(aux), stdin) != NULL)
+		{
+			if(aux[strnlen(aux, sizeof(aux)) - 1] == '\n')
 			{
-				bufferString[strnlen(bufferString, sizeof(bufferString)) - 1] = '\0';
+				aux[strnlen(aux, sizeof(aux)) - 1] = '\0';
 			}
-			if(strnlen(bufferString, sizeof(bufferString)) < longitud)
+			if(strnlen(aux, sizeof(aux)) <= len)
 			{
-				strncpy(cadena, bufferString, longitud);
-				retorno = 1;
+				strncpy(str, aux, len);
+				rtn = 1;
 			}
 		 }
 	 }
-	return retorno;
+	return rtn;
 }
 
-/// \fn int esNumerico(char*, int)
-/// @brief Verifica si la cadena ingresada es numnerica
+/// \fn int verify_IsNumeric(char*, int)
+/// @brief Verifies if the inputted string is numeric
 ///
-/// @param cadena cadena Array con la cadena a ser analizada
-/// @param longitud Longitud de la cadena
-/// @return Retorna 1 si es nœmerico y 0 si no lo es
-int esNumerico(char* cadena, int longitud)
+/// @param str Array with the string to be analyzed
+/// @param len Length of string
+/// @return Returns -1 if there is an error, a  1 if the sitring is numeric and 0 if not
+int verify_IsNumeric(char* str, int len)
 {
-	int retorno;
+	int rtn;
    	int i;
 
-   	retorno = 1;
- 	if(cadena != NULL && longitud > 0)
+   	rtn = -1;
+
+   	if(str != NULL && len > 0)
  	{
-		for(i = 0; i < longitud && cadena[i] != '\0'; i++)
+   		rtn = 1;
+
+		for(i = 0; i < len && str[i] != '\0'; i++)
 		{
-			if(i == 0 && cadena[i] == '-')
+			if(i == 0 && str[i] == '-')
 			{
 				continue;
 			}
-			if(!isdigit(cadena[i]))
+			if(!isdigit(str[i]))
 			{
-				retorno = 0;
+				rtn = 0;
 				break;
 			}
-	   }
- 	}
- 	else
- 	{
- 		retorno = 0;
+		}
  	}
 
-   return retorno;
+   	return rtn;
 }
 
-/// \fn int getInt(int*)
-/// \brief Obtiene un numero entero
+/// \fn int verify_IsNumeric(char*, int)
+/// @brief Verifies if the inputted string is numeric float
 ///
-/// \param pNumero Puntero al espacio de memoria donde se dejara el resultado
-/// \return Retorna 1 si logro obtener un entero  y 0 si no
-int getInt(int* pNumero)
+/// @param str Array with the string to be analyzed
+/// @param len Length of string
+/// @return Returns -1 if there is an error, a  1 if the sitring is numeric float and 0 if not
+int verify_IsNumericFloat(char* str, int len)
 {
-	int retorno;
-	char bufferInt[50];
+	int rtn;
+	int flagPoint;
 
-	retorno = 0;
+	rtn = -1;
+	flagPoint = 0;
 
-	if(pNumero != NULL)
+	if(str != NULL && len > 0)
 	{
-		if(myGets(bufferInt, sizeof(bufferInt)) && esNumerico(bufferInt, sizeof(bufferInt)))
+		rtn = 1;
+
+		for(int i = 0; i < len && str[i] != '\0'; i++)
 		{
-			*pNumero  = atoi(bufferInt);
-			retorno = 1;
+			if(i == 0 && str[i] == '-')
+			{
+				continue;
+			}
+			if (str[i] == '.' && flagPoint == 0)
+			{
+				flagPoint = 1;
+				continue;
+			}
+			if(!isdigit(str[i]))
+			{
+				rtn = 0;
+				break;
+			}
 		}
 	}
 
-
-	return retorno;
+	return rtn;
 }
 
-/// @fn int estaEnRango(int, int, int)
-/// @brief Verifica que el numero este debtro del rango
+/// @fn verify_IsInRangeInt(int, int, int)
+/// @brief Verifies that the integer number is in the range
 ///
-/// @param numero El numero a ser validado
-/// @param minimo Es el numero minimo a ser aceptado
-/// @param maximo Es el minimo maximo a ser aceptado
-/// @return Retorna 1 si esta en el rango y 0 si no lo esta
-int estaEnRangoInt(int numero, int minimo, int maximo)
+/// @param number The number to be validated
+/// @param min Is the minimum number to be accepted
+/// @param max Is the maxaximum to be accepted
+/// @return Returns 1 if it is in the range and 0 if it is not
+int verify_IsInRangeInt(int number, int min, int max)
 {
-	int retorno;
+	int rtn;
 
-	retorno = 1;
+	rtn = 1;
 
-	if(numero < minimo || numero > maximo)
+	if(number < min || number > max)
 	{
-		retorno = 0;
+		rtn = 0;
 	}
 
-	return retorno;
+	return rtn;
 }
 
-/// \fn int getValidIntReintentos(int*, char*, char*, int, int, int)
-/// \brief Solicita un numero entero al usuario, luego de veruficarlo lo devuelve,
-/// el usuario tiene una determiada cantidad de intentos para ingresar un numero valido
+/// @fn verify_IsInRangeInt(int, int, int)
+/// @brief Verifies that the float number is in the range
 ///
-/// \param pNumero Puntero al espacio de memoria donde se dejara el resultado de la funcion
-/// \param mensaje Mensaje a ser mostrado
-/// \param mensajeError El mesaje de error a ser mostrado
-/// \param minimo El numero minimo a ser aceptado
-/// \param maximo El numero maximo a ser aceptado
-/// \param reintentos La cantidad de reintentos que tiene el usuario
-/// \return Retorna 1 si obtuvo el numero y 0 si no
-int getValidIntReintentos(int* pNumero, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos)
+/// @param number The number to be validated
+/// @param min Is the minimum number to be accepted
+/// @param max Is the maxaximum to be accepted
+/// @return Returns 1 if it is in the range and 0 if it is not
+int verify_IsInRangeFloat(float number, float min, float max)
 {
-	int retorno;
-	int bufferInt;
+	int rtn;
 
-	retorno = 0;
+	rtn = 1;
 
-	do
+	if(number < min || number > max)
 	{
-		printf("%s", mensaje);
-		if(getInt(&bufferInt) && estaEnRangoInt(bufferInt, minimo, maximo))
-		{
-			*pNumero = bufferInt;
-			retorno = 1;
-			break;
-		}
-
-		printf("%s\n", mensajeError);
-		reintentos --;
-
-	}while(reintentos >= 0);
-
-	return retorno;
-}
-
-/// \fn int getValidInt(int*, char*, char*, int, int, int)
-/// \brief Solicita un numero entero al usuario, luego de veruficarlo lo devuelve
-///
-/// \param pNumero Puntero al espacio de memoria donde se dejara el resultado de la funcion
-/// \param mensaje Mensaje a ser mostrado
-/// \param mensajeError El mesaje de error a ser mostrado
-/// \param minimo El numero minimo a ser aceptado
-/// \param maximo El numero maximo a ser aceptado
-/// \param reintentos La cantidad de reintentos que tiene el usuario
-/// \return Retorna 1 si obtuvo el numero y 0 si no
-int getValidInt(int* pNumero, char* mensaje, char* mensajeError, int minimo, int maximo)
-{
-	int retorno;
-	int bufferInt;
-
-	retorno = 0;
-
-	do
-	{
-		printf("%s", mensaje);
-		if(getInt(&bufferInt) && estaEnRangoInt(bufferInt, minimo, maximo))
-		{
-			*pNumero = bufferInt;
-			retorno = 1;
-			break;
-		}
-
-		printf("%s\n", mensajeError);
-
-	}while(retorno == 0);
-
-	return retorno;
-}
-
-/// @fn int esNumericoFlotante(char*, int)
-/// @brief Verifica si el valor recibido es numérico flotantes, positivo o negativo
-///
-/// @param cadena Array con la cadena a ser analizada
-/// @param longitud
-/// @return 1 si es númerico y 0 si no lo es
-int esNumericoFlotante(char* cadena, int longitud)
-{
-	int retorno;
-	int flagPunto;
-
-	retorno = 1;
-	flagPunto = 0;
-
-	for(int i = 0; i < longitud && cadena[i] != '\0'; i++)
-	{
-    	if(i == 0 && cadena[i] == '-')
-    	{
-    		continue;
-    	}
-		if (cadena[i] == '.' && flagPunto == 0)
-		{
-			flagPunto = 1;
-			continue;
-		}
-		if(!isdigit(cadena[i]))
-		{
-			retorno = 0;
-			break;
-		}
-	}
-	return retorno;
-}
-
-/// @fn int getInt(void)
-/// @brief Verifica si la cadena ingresada es numerica flotante, si lo es,
-/// convierte la cadena en flotante y la retorna.
-///
-/// @return  El numero entero.
-int getFloat(float* pNumero)
-{
-	float retorno;
-	char bufferFloat[50];
-
-	if(myGets(bufferFloat, sizeof(bufferFloat)) && esNumericoFlotante(bufferFloat, sizeof(bufferFloat)))
-	{
-		*pNumero = atof(bufferFloat);
-		retorno = 1;
+		rtn = 0;
 	}
 
-	return retorno;
+	return rtn;
 }
 
-/// @fn int estaEnRango(float, float, float)
-/// @brief Verifica que el numero este debtro del rango
+/// \fn int verify_IsPositiveNegativeCero(int)
+/// \brief Verify if the number is positive, negative or zero
 ///
-/// @param numero El numero a er abalizado
-/// @param minimo Es el numero minimo a ser aceptado
-/// @param maximo Es el minimo maximo a ser aceptado
-/// @return
-int estaEnRangoFloat(float numero, float minimo, float maximo)
+/// \param number The number to verify
+/// \return -1 if the number is negative, 1 if the number is positive, 0 if the number is 0
+int verify_IsPositiveNegativeZero(int number)
 {
-	int retorno;
+	int rtn;
 
-	retorno = 1;
-
-	if(numero < minimo || numero > maximo)
+	if(number < 1)
 	{
-		retorno = 0;
+		rtn = -1;
 	}
-
-	return retorno;
-}
-
-
-/// @fn float getValidFloat(char[], char[], int, int)
-/// @brief  Solicita un numero flotante al usuario, luego de verificarlo devuelve el resultado
-///
-/// @param mensaje Es el mensaje a ser mostrado
-/// @param mensajeError Es el mensaje de Error a ser mostrado
-/// @param minimo Es el numero maximo a ser aceptado
-/// @param maximo Es el minimo minimo a ser aceptado
-/// @return Retorna el numero flotante
-int getValidFloat(float* pNumero, char* mensaje, char* mensajeError, float minimo, float maximo, int reintentos)
-{
-	int retorno;
-	float bufferFloat;
-
-	retorno = 0;
-
-	do
+	else
 	{
-		printf("%s", mensaje);
-		if(getFloat(&bufferFloat) && estaEnRangoFloat(bufferFloat, minimo, maximo))
+		if(number > 1)
 		{
-			*pNumero = bufferFloat;
-			retorno = 1;
-			break;
+			rtn = 1;
 		}
-
-		printf("%s\n", mensajeError);
-		reintentos --;
-
-	}while(reintentos >= 0);
-
-	return retorno;
-}
-/// @fn int esSoloLetras(char[], int)
-/// @brief Verifica si la cadena esta compuesta solo por letras.
-///
-/// @param cadena Array con la cadena a ser analizada
-/// @param longitud Longitud de la cadena.
-/// @return 1 si es nœmerico y 0 si no lo es
-int esSoloLetras(char cadena[], int longitud)
-{
-    int retorno;
-    int i;
-    retorno = 1;
-    for(i = 0; i < longitud && cadena[i] != '\0'; i++)
-    {
-    	if(cadena [i] == 'ñ')
-    	{
-    		continue;
-    	}
-        if(!isalpha(cadena[i]))
-        {
-           	retorno = 0;
-        	break;
-        }
-    }
-
-    return retorno;
-}
-
-/// @fn int getStringLetras(char[], int)
-/// @brief Verifica si la cadena esta compuesta solo por letras,
-/// de ser asi la copia.
-///
-/// @param cadena Array con la cadena a ser analizada
-/// @param longitud Longitud de la cadena
-/// @return Retorna 1 si la cadena esta compuesta solo por letras y 0 si no
-int getStringLetras(char cadena[], int longitud)
-{
-	int retorno;
-	char auxiliar[51];
-	retorno = 0;
-	if(myGets(auxiliar, sizeof(auxiliar)) == 0 && esSoloLetras(auxiliar, sizeof(auxiliar)))
-	{
-		if(strnlen(auxiliar, sizeof(auxiliar)) <= longitud)
+		else
 		{
-			strncpy(cadena, auxiliar, longitud);
-			retorno = 1;
+			rtn = 0;
 		}
 	}
-	return retorno;
+
+	return rtn;
 }
 
-/// @fn void getValidStingLetras(char[], int, char[], char[])
-/// @brief Solicita una cadena al usuario compuesta solo por letras
+/// \fn int verify_IsNumeric(char*, int)
+/// @brief Verifies if the inputted string is alphanumeric
 ///
-/// @param cadena
-/// @param longitud Longitud de la cadena.
-/// @param mensaje El mensaje a ser mostrado
-/// @param mensajeError El mensaje de error a ser mostrado
-void getValidStingLetras(char cadena[], int longitud, char mensaje[], char mensajeError[])
+/// @param str Array with the string to be analyzed
+/// @param len Length of string
+/// @return Returns -1 if there is an error, a  1 if the sitring is alphanumeric and 0 if not
+int verify_IsAlphanumeric(char str[], int len)
 {
-	printf("%s: ", mensaje);
-	while(!getStringLetras(cadena, longitud))
-	{
-		printf("%s", mensajeError);
-		printf("\n%s: ", mensaje);
-
-	}
-}
-
-/// @fn int esAlfaNumerico(char[], int)
-/// @brief Verifica si la cadena esta compuesta solo por letras y/o numeros.
-///
-/// @param cadena Array con la cadena a ser analizada
-/// @param longitud Longitud de la cadena.
-/// @return 1 si es alfa nœmerica y 0 si no lo es
-int esAlfaNumerico(char cadena[], int longitud)
-{
-    int retorno;
+    int rtn;
     int i;
 
-    retorno = 1;
-    for(i = 0; i < longitud && cadena[i] != '\0'; i++)
+    rtn = -1;
+
+    if(str != NULL && len > 0)
     {
-        if(!isalpha(cadena[i]) && !isdigit(cadena[i]))
-        {
-        	retorno = 0;
-        	break;
-        }
+		rtn = 0;
+
+    	for(i = 0; i < len && str[i] != '\0'; i++)
+		{
+			if(!isalpha(str[i]) && !isdigit(str[i]))
+			{
+				rtn = 0;
+				break;
+			}
+		}
     }
 
-    return retorno;
+    return rtn;
 }
 
-/// @fn int getStringLetras(char[], int)
-/// @brief Verifica si la cadena esta compuesta por letras y/o numeros,
-/// de ser asi la copia.
+/// \fn int verify_IsNumeric(char*, int)
+/// @brief Verifies if the inputted string contains only letters
 ///
-/// @param cadena Array con la cadena a ser analizada
-/// @param longitud Longitud de la cadena
-/// @return Retorna 1 si la cadena esta compuesta solo por letras y 0 si no
-int getStringAlfaNumerico(char cadena[], int longitud)
+/// @param str Array with the string to be analyzed
+/// @param len Length of string
+/// @return Returns -1 if there is an error, a  1 if the sitring is only letters and 0 if not
+int verify_IsLetters(char* str, int len)
 {
-	int retorno;
-	char auxiliar[51];
-	retorno = 0;
-	if(myGets(auxiliar, sizeof(auxiliar)) == 0 && esAlfaNumerico(auxiliar, sizeof(auxiliar)))
-	{
-		if(strnlen(auxiliar, sizeof(auxiliar)) <= longitud)
-		{
-			strncpy(cadena, auxiliar, longitud);
-			retorno = 1;
-		}
-	}
-	return retorno;
-}
-
-/// @fn void getValidStingLetras(char[], int, char[], char[])
-/// @brief Solicita una cadena alfanumerica al usuario al usuario.
-///
-/// @param cadena
-/// @param longitud Longitud de la cadena.
-/// @param mensaje El mensaje a ser mostrado
-/// @param mensajeError El mensaje de error a ser mostrado
-void getValidStingAlfanumerico(char cadena[], int longitud, char mensaje[], char mensajeError[])
-{
-	printf("%s: ", mensaje);
-	while(!getStringAlfaNumerico(cadena, longitud))
-	{
-		printf("%s", mensajeError);
-		printf("\n%s: ", mensaje);
-	}
-}
-
-/// @fn void primeraMayuscula(char[])
-/// @brief Pasa a mayuscula la primera letra de la cadena
-///
-/// @param cadena Cadena a la que le va a poner en mayuscula la primer letra.
-void primeraMayuscula(char cadena[])
-{
-	int i;
-	int cantidad;
-	strlwr(cadena);
-	cadena[0] = toupper(cadena[0]);
-
-	cantidad = strlen(cadena);
-
-	for(i = 0; i < cantidad; i++ )
-	{
-		if(cadena[i] == ' ')
-		{
-			cadena[i+1] = toupper(cadena[i+1]);
-		}
-	}
-}
-
-/// @fn int esSoloLetras(char[], int)
-/// @brief Verifica si la cadena esta compuesta solo por letrasy tiene mas de 3. aceptando puntos y ñ,
-///
-/// @param cadena Array con la cadena a ser analizada
-/// @param longitud Longitud de la cadena.
-/// @return 1 si es solo letras y 0 si no lo es
-int esSoloLetrasNombre(char cadena[], int longitud)
-{
-    int retorno;
+    int rtn;
     int i;
-    int contador;
 
-    retorno = 1;
-    contador = 0;
-    for(i = 0; i < longitud && cadena[i] != '\0'; i++)
+    rtn = -1;
+
+    if(str != NULL)
     {
-    	if(isalpha(cadena[i]) || cadena[i] == 'ñ' || cadena[i] == 'Ñ' )
-    	{
-    		contador ++;
-    	}
-    	if(cadena [i] == 'ñ' || cadena[i] == 'Ñ' || cadena[i] == '.')
-    	{
-    		continue;
-    	}
-        if(cadena[i] != ' ' && !isalpha(cadena[i]))
-        {
-           	retorno = 0;
-        	break;
-        }
+    	rtn = 1;
+
+		for(i = 0; i < len && str[i] != '\0'; i++)
+		{
+			if(str [i] == 'ñ')
+			{
+				continue;
+			}
+			if(!isalpha(str[i]))
+			{
+				rtn = 0;
+				break;
+			}
+		}
     }
-    if(contador < 2)
-    {
-    	retorno = 0;
-    }
-    return retorno;
+
+    return rtn;
 }
 
-/// @fn int getStringLetras(char[], int)
-/// @brief Verifica si la cadena esta compuesta por letras y tenga mas de 3 caracteres,
-/// de ser asi la copia.
+/// \fn int verify_IsNumeric(char*, int)
+/// @brief Verifies if the inputted string contains only letters, accepting one one space
 ///
-/// @param cadena Array con la cadena a ser analizada
-/// @param longitud Longitud de la cadena
-/// @return Retorna 1 si la cadena esta compuesta solo por letras y 0 si no
-int getStringNombre(char cadena[], int longitud)
+/// @param str Array with the string to be analyzed
+/// @param len Length of string
+/// @return Returns -1 if there is an error, a  1 if the sitring contains only letters with or without one space and 0 if not
+int verify_IsLettersWithSpace(char* str, int len)
 {
-	int retorno;
-	char auxiliar[51];
-	retorno = 0;
-	if(myGets(auxiliar, sizeof(auxiliar)) == 0 && esSoloLetrasNombre(auxiliar, sizeof(auxiliar)))
-	{
-		if(strnlen(auxiliar, sizeof(auxiliar)) <= longitud)
+    int rtn;
+    int i;
+    int flagSpace;
+
+    rtn = -1;
+    flagSpace = 0;
+
+    if(str != NULL)
+    {
+    	rtn = 1;
+
+		for(i = 0; i < len && str[i] != '\0'; i++)
 		{
-			strncpy(cadena, auxiliar, longitud);
-			retorno = 1;
+			if(str [i] == 'ñ')
+			{
+				continue;
+			}
+			if(isspace(str[i]) && flagSpace == 0)
+			{
+				flagSpace = 1;
+			}
+			if(!isalpha(str[i]))
+			{
+				rtn = 0;
+				break;
+			}
+		}
+    }
+
+    return rtn;
+}
+
+/// @fn verify_IsLettersName(char[], int)
+/// @fn int check_IsLetters(char[], int)
+/// @brief Verifies if the string is composed only of letters and has more than 3. Accepting periods and ñ
+///
+/// @param str Array with the string to parse
+/// @param len len of the string.
+/// @return Returns -1 if there is an error, it's just letters and 0 if it's not
+int verify_IsLettersName(char* str, int len)
+{
+    int rtn;
+    int i;
+
+    rtn = -1;
+
+    if(str != NULL && len > 0)
+    {
+    	rtn = 1;
+
+   		for(i = 0; i < len && str[i] != '\0'; i++)
+		{
+			if(str [i] == 'ñ' || str[i] == 'Ñ')
+			{
+				continue;
+			}
+			if(!isalpha(str[i]))
+			{
+				rtn = 0;
+				break;
+			}
+		}
+
+   		if(strlen(str) < 4)
+		{
+			rtn = 0;
+		}
+    }
+
+    return rtn;
+}
+
+/// \fn int get_Int(int*)
+/// \brief Get an integer number
+///
+/// \param pNumber Pointer to the memory space where the result of the function will be placed
+/// \return Returns -1 if there is an error, 1 if the integer number is obteined, 0 if not
+int get_Int(int* pNumber)
+{
+	int rtn;
+	char aux[50];
+
+	rtn = -1;
+
+	if(pNumber != NULL)
+	{
+		rtn = 0;
+
+		if(myGets(aux, sizeof(aux)) == 1 && verify_IsNumeric(aux, sizeof(aux)) == 1)
+		{
+			*pNumber  = atoi(aux);
+			rtn = 1;
 		}
 	}
-	return retorno;
+
+	return rtn;
 }
 
-/// @fn void getValidStingLetras(char[], int, char[], char[])
-/// @brief Solicita una cadena al usuario compuesta solo por letras y que contenga mas de 3 caracteres y pasa la primera letra a mayuscula
+/// \fn int get_Int(int*)
+/// \brief Get an float number
 ///
-/// @param cadena Array con la cadena.
-/// @param longitud Longitud de la cadena.
-/// @param mensaje El mensaje a ser mostrado
-/// @param mensajeError El mensaje de error a ser mostrado
-void getValidStingLetrasNombre(char cadena[], int longitud, char mensaje[], char mensajeError[])
+/// \param pNumber Pointer to the memory space where the result of the function will be placed
+/// \return Returns -1 if there is an error, 1 if the float number is obteined, 0 if not
+int get_Float(float* pNumber)
 {
-	printf("%s: ", mensaje);
-	while(!getStringNombre(cadena, longitud))
+	float rtn;
+	char aux[50];
+
+	rtn = -1;
+
+	if(pNumber != NULL)
 	{
-		printf("%s", mensajeError);
-		printf("\n%s: ", mensaje);
+		rtn = 0;
+
+		if(myGets(aux, sizeof(aux)) == 1 && verify_IsNumericFloat(aux, sizeof(aux)) == 1)
+		{
+			*pNumber = atof(aux);
+			rtn = 1;
+		}
 	}
-	primeraMayuscula(cadena);
+
+	return rtn;
 }
 
+/// \fn int get_StringLettters(char*, int)
+/// \brief Get a sting containing only letters
+///
+/// \param str Array where the string will be copied
+/// \param len Length of the array where the string will be copied
+/// \return Returns -1 if there is an error, 1 if the string has been copied, 0 if not
+int get_StringLettters(char* str, int len)
+{
+	int rtn;
+	char aux[51];
+
+	rtn = -1;
+
+	if(str != NULL && len > 0)
+	{
+		rtn = 0;
+
+		if(myGets(aux, sizeof(aux)) == 1 && verify_IsLetters(aux, sizeof(aux)) == 1)
+		{
+			if(strnlen(aux, sizeof(aux)) <= len)
+			{
+				strncpy(str, aux, len);
+				rtn = 1;
+			}
+		}
+	}
+	return rtn;
+}
+
+/// \fn int get_ValidInt(int*, char*, char*, int, int, int)
+/// \brief Requests an integer number from the user, after verifying it returns it
+///
+/// \param pNumber Pointer to the memory space where the result of the function will be placed
+/// \param message Message to be displayed
+/// \param errorMessage The error message to be displayed
+/// \param min The minimum number to be accepted
+/// \param max The maximum number to be accepted
+/// \return Returns -1 if there is an error, 1 if the integer number is obteined,  and 0 if not
+int get_ValidInt(int* pNumber, char* message , char* errorMessage , int min, int max)
+{
+	int rtn;
+	int aux;
+
+	rtn = -1;
+
+	if(pNumber != NULL)
+	{
+		rtn = 0;
+
+		do
+		{
+			printf("%s (min %d, max %d): ", message , min, max);
+			if(get_Int(&aux) == 1 && verify_IsInRangeInt(aux, min, max))
+			{
+				*pNumber = aux;
+				rtn = 1;
+				break;
+			}
+
+			printf("%s\n", errorMessage );
+
+		}while(rtn == 0);
+	}
+
+	return rtn;
+}
+
+
+/// \fn int get_ValidIntRetries(int*, char*, char*, int, int, int)
+/// \brief Requests an integer number from the user, after verifying it returns it
+/// the user has a certain amount of attempts to enter a valid number
+///
+/// \param pNumber Pointer to the memory space where the result of the function will be placed
+/// \param message Message to be displayed
+/// \param errorMessage The error message to be displayed
+/// \param min The minimum number to be accepted
+/// \param max The maximum number to be accepted
+/// \param retries The number of retries the user has
+/// \return Returns -1 if there is an error, 1 if the integer number is obteined,  and 0 if not
+int get_ValidIntRetries(int* pNumber, char* message , char* errorMessage , int min, int max, int retries)
+{
+	int rtn;
+	int aux;
+
+	rtn = -1;
+
+	if(pNumber != NULL && retries > 0)
+	{
+		rtn = 0;
+
+		do
+		{
+			printf("%s (min %d, max %d): ", message , min, max);
+			if(get_Int(&aux) == 1 && verify_IsInRangeInt(aux, min, max))
+			{
+				*pNumber = aux;
+				rtn = 1;
+				break;
+			}
+
+			printf("%s\n", errorMessage );
+			retries --;
+
+		}while(retries >= 0);
+	}
+
+	return rtn;
+}
+
+
+/// @fn float get_ValidFloat(char[], char[], int, int)
+/// \brief Requests an float number from the user, after verifying it returns it
+///
+/// \param pNumber Pointer to the memory space where the result of the function will be placed
+/// \param message Message to be displayed
+/// \param errorMessage The error message to be displayed
+/// \param min The minimum number to be accepted
+/// \param max The maximum number to be accepted
+/// \return Returns -1 if there is an error, 1 if the float number is obteined,  and 0 if not
+int get_ValidFloat(float* pNumber, char* message , char* errorMessage , float min, float max)
+{
+	int rtn;
+	float aux;
+
+	rtn = -1;
+
+	if(pNumber != NULL)
+	{
+		rtn = 0;
+
+		do
+		{
+			printf("%s (min %.2f, max %.2f): ", message , min, max);
+			if(get_Float(&aux) == 1 && verify_IsInRangeFloat(aux, min, max))
+			{
+				*pNumber = aux;
+				rtn = 1;
+				break;
+			}
+
+			printf("%s\n", errorMessage );
+
+		}while(rtn == 0);
+	}
+
+	return rtn;
+}
+
+/// \fn int get_ValidFloatRetries(float*, char*, char*, float, float, int)
+/// \brief Requests an float number from the user, after verifying it returns it
+/// the user has a certain amount of attempts to enter a valid number
+///
+/// \param pNumber Pointer to the memory space where the result of the function will be placed
+/// \param message Message to be displayed
+/// \param errorMessage The error message to be displayed
+/// \param min The minimum number to be accepted
+/// \param max The maximum number to be accepted
+/// \param retries The number of retries the user has
+/// \return Returns -1 if there is an error, 1 if the integer float is obteined,  and 0 if not
+int get_ValidFloatRetries(float* pNumber, char* message , char* errorMessage , float min, float max, int retries)
+{
+	int rtn;
+	float aux;
+
+	rtn = -1;
+
+	if(pNumber != NULL && retries > 0)
+	{
+		rtn = 0;
+
+		do
+		{
+			printf("%s (min %.2f, max %.2f): ", message , min, max);
+			if(get_Float(&aux) == 1 && verify_IsInRangeFloat(aux, min, max)==1)
+			{
+				*pNumber = aux;
+				rtn = 1;
+				break;
+			}
+
+			printf("%s\n", errorMessage );
+			retries --;
+
+		}while(retries >= 0);
+	}
+
+	return rtn;
+}
+
+/// @fn void get_ValidStingLetras(char[], int, char[], char[])
+/// @brief Requests a string from the user consisting only of letters
+///
+/// \param str Array where the string will be copied
+/// \param len Length of the array where the string will be copied
+/// @param message The message to be displayed
+/// @param errorMessage The error message to be displayed
+/// \return Returns -1 in case of error, 1 in case of being able to obtain the string and 0 if not
+int get_ValidStingLetters(char* str, int len, char message [], char errorMessage [])
+{
+	int rtn;
+
+	rtn = -1;
+
+	if(str != NULL)
+	{
+		rtn = 0;
+
+		do
+		{
+			printf("%s: ", message );
+
+			if(get_StringLettters(str, len) == 1)
+			{
+				rtn = 1;
+				break;
+			}
+
+			printf("%s\n", errorMessage );
+		}
+		while(rtn == 0);
+	}
+
+	return rtn;
+}
+
+/// @fn void get_ValidStingLetras(char[], int, char[], char[])
+/// @brief Requests a string from the user consisting only of letters
+///
+/// \param str Array where the string will be copied
+/// \param len Length of the array where the string will be copied
+/// @param message The message to be displayed
+/// @param errorMessage The error message to be displayed
+/// \param retries The number of retries the user has
+/// \return Returns -1 in case of error, 1 in case of being able to obtain the string and 0 if not
+int get_ValidStingLettersRetries(char* str, int len, char* message, char* errorMessage, int retries)
+{
+	int rtn;
+
+	rtn = -1;
+
+	if(str != NULL && retries > 0)
+	{
+		rtn = 0;
+
+		do
+		{
+			printf("%s: ", message );
+
+			if(get_StringLettters(str, len) == 1)
+			{
+				rtn = 1;
+				break;
+			}
+
+			printf("%s\n", errorMessage );
+			retries --;
+		}
+		while(retries >= 0);
+	}
+
+	return rtn;
+}
+
+
+/// @fn int get_StringLettters(char[], int)
+/// \brief Get a sting containing only alphanumeric characters
+///
+/// \param str Array where the string will be copied
+/// \param len Length of the array where the string will be copied
+/// \return Returns -1 if there is an error, 1 if the string has been copied, 0 if not
+int get_StringAlphanumeric(char* str, int len)
+{
+	int rtn;
+	char aux[51];
+	rtn = 0;
+
+	if(str != NULL && len > 0)
+	{
+		rtn = 0;
+
+		if(myGets(aux, sizeof(aux)) == 1 && verify_IsAlphanumeric(aux, sizeof(aux)) == 1)
+		{
+			if(strnlen(aux, sizeof(aux)) <= len)
+			{
+				strncpy(str, aux, len);
+				rtn = 1;
+			}
+		}
+	}
+
+	return rtn;
+}
+
+/// @fn void get_ValidStingLetras(char[], int, char[], char[])
+/// @brief Requests a string from the user consisting only alphanumeric characters
+///
+/// \param str Array where the string will be copied
+/// \param len Length of the array where the string will be copied
+/// @param message The message to be displayed
+/// @param errorMessage The error message to be displayed
+/// \return Returns -1 in case of error, 1 in case of being able to obtain the string and 0 if not
+int get_ValidStingAlphanumeric(char* str, int len, char message [], char errorMessage [])
+{
+	int rtn;
+
+	rtn = -1;
+
+	if(str != NULL)
+	{
+		rtn = 0;
+
+		do
+		{
+			printf("%s: ", message );
+
+			if(get_StringAlphanumeric(str, len) == 1)
+			{
+				rtn = 1;
+				break;
+			}
+
+			printf("%s\n", errorMessage );
+		}
+		while(rtn == 0);
+	}
+
+	return rtn;
+}
+
+/// @fn void get_ValidStingLetras(char[], int, char[], char[])
+/// @brief Requests a string from the user consisting only of alphanumeric characters
+///
+/// \param str Array where the string will be copied
+/// \param len Length of the array where the string will be copied
+/// @param message The message to be displayed
+/// @param errorMessage The error message to be displayed
+/// \param retries The number of retries the user has
+/// \return Returns -1 in case of error, 1 in case of being able to obtain the string and 0 if not
+int get_ValidStingAlphanumericRetries(char* str, int len, char* message, char* errorMessage, int retries)
+{
+	int rtn;
+
+	rtn = -1;
+
+	if(str != NULL && retries > 0)
+	{
+		rtn = 0;
+
+		do
+		{
+			printf("%s: ", message );
+
+			if(get_StringLettters(str, len) == 1)
+			{
+				rtn = 1;
+				break;
+			}
+
+			printf("%s\n", errorMessage );
+			retries --;
+		}
+		while(retries >= 0);
+	}
+
+	return rtn;
+}
+
+/// @fn int get_StringLettters(char[], int)
+/// \brief Get a sting containing only letters and has more than 3. Accepting periods and ñ
+///
+/// \param str Array where the string will be copied
+/// \param len Length of the array where the string will be copied
+/// \return Returns -1 if there is an error, 1 if the string has been copied, 0 if not
+int get_StringName(char* str, int len)
+{
+	int rtn;
+	char aux[51];
+	rtn = -1;
+
+	if(str != NULL && len > 0)
+	{
+		rtn = 0;
+
+		if(myGets(aux, sizeof(aux)) == 1 && verify_IsLettersName(aux, sizeof(aux)) == 1)
+		{
+			if(strnlen(aux, sizeof(aux)) <= len)
+			{
+				strncpy(str, aux, len);
+				rtn = 1;
+			}
+		}
+	}
+
+	return rtn;
+}
+
+/// @fn void get_ValidStingLetras(char[], int, char[], char[])
+/// @brief Requests a string from the user consisting only of letters
+///
+/// \param str Array where the string will be copied
+/// \param len Length of the array where the string will be copied
+/// @param message The message to be displayed
+/// @param errorMessage The error message to be displayed
+/// \return Returns -1 in case of error, 1 in case of being able to obtain the string and 0 if not
+int get_ValidName(char* str, int len, char* message, char* errorMessage)
+{
+	int rtn;
+
+	rtn = -1;
+
+	if(str != NULL)
+	{
+		rtn = 0;
+
+		do
+		{
+			printf("%s: ", message );
+
+			if(get_StringName(str, len) == 1)
+			{
+				format_Name(str);
+				rtn = 1;
+				break;
+			}
+
+			printf("%s\n", errorMessage );
+		}
+		while(rtn == 0);
+	}
+
+	return rtn;
+}
+
+/// @fn void get_ValidStingLetras(char[], int, char[], char[])
+/// @brief Requests a string from the user consisting only of letters and has more than 3. Accepting periods and ñ
+///
+/// \param str Array where the string will be copied
+/// \param len Length of the array where the string will be copied
+/// @param message The message to be displayed
+/// @param errorMessage The error message to be displayed
+/// \param retries The number of retries the user has
+/// \return Returns -1 in case of error, 1 in case of being able to obtain the string and 0 if not
+int get_ValidNameRetries(char* str, int len, char* message, char* errorMessage, int retries)
+{
+	int rtn;
+
+	rtn = -1;
+
+	if(str != NULL && retries > 0)
+	{
+		rtn = 0;
+
+		do
+		{
+			printf("%s: ", message );
+
+			if(get_StringName(str, len) == 1)
+			{
+				format_Name(str);
+				rtn = 1;
+				break;
+			}
+
+			printf("%s\n", errorMessage );
+			retries --;
+		}
+		while(retries >= 0);
+	}
+
+	return rtn;
+}
+
+
+
+/// \fn int menu(char*, char*, char*, char*, char*, char*)
+/// \brief Imprime por pantalla un menu con 7 printf, que van a contener las opciones,
+/// despues pide un numero entero al usuario que sea valido, dependiendo de las opciones del menu,
+/// y si lo es, lo retorna.
+///
+/// \param titulo El titulo a mostrar en el menu
+/// \param opcionUno Primera opcion del menu
+/// \param opcionDos Segunda opcion del menu
+/// \param opcionTres Tercera opcion del menu
+/// \param opcionCuatro Cuarta opcion del menu
+/// \param opcionCinco Quinta opcion del menu
+/// \param opcionSeis Sexta opcion del menu
+/// \param maximo Numero maximo a ser aceptado
+/// \return El numero que el usuario eligio.
+int menu(int* pOption, char* title, char* optionOne, char* optionTwo, char* optionThree,
+		char* optionFour, char* optionFive, char* optionSix)
+{
+	int aux;
+	int rtn;
+
+	rtn = -1;
+
+	if(pOption != NULL)
+	{
+		printf("%s", title);
+		printf("%s", optionOne);
+		printf("%s", optionTwo);
+		printf("%s", optionThree);
+		printf("%s", optionFour);
+		printf("%s", optionFive);
+		printf("%s\n", optionSix);
+
+		if(get_Int(&aux))
+		{
+			*pOption = aux;
+			rtn = 1;
+		}
+	}
+
+	return rtn;
+}

@@ -10,32 +10,25 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "entradas.h"
-#include "menu.h"
+#include <strings.h>
+#include "general.h"
 
+#define TAM 11
 
-#define TAM 5
 
 int main(void) {
 
 	setbuf(stdout, NULL);
 
-	int numero;
-	int opcionMaximaMenu;
+	char str[TAM];
 
-	opcionMaximaMenu = 2;
-
-	if(menu(&numero, "Cases", "\nCase 1", "\nCase 2", "", "", "", ""))
+	if(get_ValidName(str, TAM, "Nombre", "Nope"))
 	{
-		switch(numero)
-		{
-			case 1:
-				printf("\nCASE 1");
-			break;
-			case 2:
-				printf("\nCASE 2");
-			break;
-		}
+		printf("El numero es: %s", str);
+	}
+	else
+	{
+		printf("No se pudo");
 	}
 
 	return EXIT_SUCCESS;

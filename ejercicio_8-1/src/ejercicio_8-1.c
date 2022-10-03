@@ -38,8 +38,7 @@ los datos.
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include "entradas.h"
-#include "menu.h"
+
 
 #define CAN 1
 
@@ -96,10 +95,7 @@ int main(void) {
 			break;
 
 			case 'G':
-				printf("\nDesea salir?(s/n): ");
-				fflush(stdin);
-				scanf("%c", &respuesta);
-				respuesta = toupper(respuesta);
+
 			break;
 
 			default:

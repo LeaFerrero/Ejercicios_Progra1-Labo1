@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=""/>
+		<item key="selection" value="rtn"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="esNumerica"/>
-			<item value="esAlfa"/>
-			<item value="contadorAlumnos"/>
-			<item value="lugar"/>
+			<item value="retorno"/>
+			<item value="message Error"/>
+			<item value="str"/>
+			<item value="letters"/>
+			<item value="get_int"/>
+			<item value="get_StringLetras"/>
+			<item value="esNumericoFlotante"/>
+			<item value="get"/>
 		</list>
 		<list key="replacehistory">
-			<item value="contadorLibretas"/>
-			<item value="lugarMaximo"/>
+			<item value="rtn"/>
+			<item value="errorMessage "/>
+			<item value="string"/>
+			<item value="get_StringLettters"/>
+			<item value="verify_isNumericFloat"/>
+			<item value="get_"/>
+			<item value="len"/>
+			<item value="aux"/>
 		</list>
 	</section>
 </section>
