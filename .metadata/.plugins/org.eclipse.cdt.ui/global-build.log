@@ -1,7 +1,12 @@
-11:56:48 **** Incremental Build of configuration Debug for project ejercicio_7-2 ****
+18:26:23 **** Incremental Build of configuration Debug for project bibliotecas ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_7-2.o" "..\\src\\ejercicio_7-2.c" 
-gcc -o ejercicio_7-2.exe "src\\ejercicio_7-2.o" 
-Info: Nothing to build for ejercicio_7-1
-Info: Nothing to build for ejercicio_7-2
-Info: Nothing to build for ejercicio_7-2
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bibliotecas.o" "..\\src\\bibliotecas.c" 
+gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\entradas.o" "src\\menu.o" 
+Info: Nothing to build for bibliotecas
+18:26:44 **** Incremental Build of configuration Debug for project bibliotecas ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\entradas.o" "src\\menu.o" 
+Info: Nothing to build for bibliotecas
+Info: Nothing to build for bibliotecas

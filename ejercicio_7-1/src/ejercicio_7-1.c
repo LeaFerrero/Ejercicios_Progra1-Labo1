@@ -23,7 +23,7 @@ void FormarApellidoNombre(char* pNombre,char* pApellido,char* pCompleto);
 
 #define TAM 100
 
-void FormarApellidoNombre(char* pNombre,char* pApellido,char* pCompleto);
+void formarApellidoNombre(char* pNombre,char* pApellido,char* pCompleto);
 
 int main(void) {
 
@@ -54,7 +54,7 @@ int main(void) {
 	return EXIT_SUCCESS;
 }
 
-void FormarApellidoNombre(char* pNombre,char* pApellido,char* pCompleto)
+void formarApellidoNombre(char* pNombre,char* pApellido,char* pCompleto)
 {
 	int i;
 	int cantidad;
