@@ -13,7 +13,7 @@
 #include <strings.h>
 #include "general.h"
 
-#define TAM 11
+#define TAM 4
 
 
 int main(void) {
@@ -22,14 +22,11 @@ int main(void) {
 
 	char str[TAM];
 
-	if(get_ValidName(str, TAM, "Nombre", "Nope"))
-	{
-		printf("El numero es: %s", str);
-	}
-	else
-	{
-		printf("No se pudo");
-	}
+	get_ValidStingAlphanumeric(str, TAM, "Nombre", "Nope");
+
+	printf("El numero es: %s", str);
+
+
 
 	return EXIT_SUCCESS;
 }

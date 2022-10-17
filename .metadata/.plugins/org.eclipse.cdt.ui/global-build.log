@@ -1,114 +1,241 @@
-Info: Nothing to build for bibliotecas
-22:49:57 **** Incremental Build of configuration Debug for project bibliotecas ****
+22:08:04 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bibliotecas.o" "..\\src\\bibliotecas.c" 
-gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\general.o" 
-22:50:15 **** Incremental Build of configuration Debug for project bibliotecas ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+Info: Nothing to build for ejercicio_10-2
+22:09:35 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bibliotecas.o" "..\\src\\bibliotecas.c" 
-gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\general.o" 
-22:52:06 **** Incremental Build of configuration Debug for project bibliotecas ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_10-2.o" "..\\src\\ejercicio_10-2.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:10:38 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bibliotecas.o" "..\\src\\bibliotecas.c" 
-gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\general.o" 
-22:53:21 **** Incremental Build of configuration Debug for project bibliotecas ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:11:39 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bibliotecas.o" "..\\src\\bibliotecas.c" 
-gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\general.o" 
-22:53:30 **** Incremental Build of configuration Debug for project bibliotecas ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:12:05 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bibliotecas.o" "..\\src\\bibliotecas.c" 
-gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\general.o" 
-22:55:35 **** Incremental Build of configuration Debug for project bibliotecas ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:12:36 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\general.o" "..\\src\\general.c" 
-gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\general.o" 
-22:56:47 **** Incremental Build of configuration Debug for project bibliotecas ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:14:15 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\general.o" "..\\src\\general.c" 
-..\src\general.c: In function 'get_ValidName':
-..\src\general.c:813:5: warning: implicit declaration of function 'format_Name' [-Wimplicit-function-declaration]
-  813 |     format_Name(str);
-      |     ^~~~~~~~~~~
-..\src\general.c: At top level:
-..\src\general.c:869:6: warning: conflicting types for 'format_Name'
-  869 | void format_Name(char* str)
-      |      ^~~~~~~~~~~
-..\src\general.c:813:5: note: previous implicit declaration of 'format_Name' was here
-  813 |     format_Name(str);
-      |     ^~~~~~~~~~~
-gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\general.o" 
-Info: Nothing to build for bibliotecas
-23:03:26 **** Incremental Build of configuration Debug for project bibliotecas ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:15:34 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bibliotecas.o" "..\\src\\bibliotecas.c" 
-gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\general.o" 
-Info: Nothing to build for bibliotecas
-Info: Nothing to build for bibliotecas
-23:06:09 **** Incremental Build of configuration Debug for project bibliotecas ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:16:27 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\general.o" "..\\src\\general.c" 
-..\src\general.c: In function 'get_ValidName':
-..\src\general.c:813:5: warning: implicit declaration of function 'format_Name' [-Wimplicit-function-declaration]
-  813 |     format_Name(str);
-      |     ^~~~~~~~~~~
-..\src\general.c: At top level:
-..\src\general.c:869:6: warning: conflicting types for 'format_Name'
-  869 | void format_Name(char* str)
-      |      ^~~~~~~~~~~
-..\src\general.c:813:5: note: previous implicit declaration of 'format_Name' was here
-  813 |     format_Name(str);
-      |     ^~~~~~~~~~~
-gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\general.o" 
-Info: Nothing to build for bibliotecas
-Info: Nothing to build for bibliotecas
-Info: Nothing to build for bibliotecas
-Info: Nothing to build for bibliotecas
-Info: Nothing to build for bibliotecas
-23:06:40 **** Incremental Build of configuration Debug for project bibliotecas ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_10-2.o" "..\\src\\ejercicio_10-2.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:17:04 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\general.o" "..\\src\\general.c" 
-..\src\general.c: In function 'get_ValidName':
-..\src\general.c:813:5: warning: implicit declaration of function 'format_Name' [-Wimplicit-function-declaration]
-  813 |     format_Name(str);
-      |     ^~~~~~~~~~~
-..\src\general.c: At top level:
-..\src\general.c:869:6: warning: conflicting types for 'format_Name'
-  869 | void format_Name(char* str)
-      |      ^~~~~~~~~~~
-..\src\general.c:813:5: note: previous implicit declaration of 'format_Name' was here
-  813 |     format_Name(str);
-      |     ^~~~~~~~~~~
-gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\general.o" 
-23:07:16 **** Incremental Build of configuration Debug for project bibliotecas ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_10-2.o" "..\\src\\ejercicio_10-2.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+Info: Nothing to build for ejercicio_10-2
+22:18:03 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\general.o" "..\\src\\general.c" 
-..\src\general.c: In function 'get_ValidName':
-..\src\general.c:813:5: warning: implicit declaration of function 'format_Name' [-Wimplicit-function-declaration]
-  813 |     format_Name(str);
-      |     ^~~~~~~~~~~
-..\src\general.c: At top level:
-..\src\general.c:869:6: warning: conflicting types for 'format_Name'
-  869 | void format_Name(char* str)
-      |      ^~~~~~~~~~~
-..\src\general.c:813:5: note: previous implicit declaration of 'format_Name' was here
-  813 |     format_Name(str);
-      |     ^~~~~~~~~~~
-gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\general.o" 
-23:09:57 **** Incremental Build of configuration Debug for project bibliotecas ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:18:25 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bibliotecas.o" "..\\src\\bibliotecas.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\general.o" "..\\src\\general.c" 
-gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\general.o" 
-Info: Nothing to build for bibliotecas
-Info: Nothing to build for bibliotecas
-23:12:02 **** Incremental Build of configuration Debug for project bibliotecas ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:18:49 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\general.o" "..\\src\\general.c" 
-gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\general.o" 
-23:12:42 **** Incremental Build of configuration Debug for project bibliotecas ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:19:25 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\general.o" "..\\src\\general.c" 
-gcc -o bibliotecas.exe "src\\bibliotecas.o" "src\\general.o" 
-Info: Nothing to build for bibliotecas
-Info: Nothing to build for bibliotecas
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:20:26 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:21:38 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:22:54 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:23:23 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:24:05 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:24:33 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:26:15 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:27:12 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:28:22 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:29:09 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:30:26 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\eSector.o" "..\\src\\eSector.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:31:54 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:35:14 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:37:14 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:38:47 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+..\src\nexo.c: In function 'nexo_contar':
+..\src\nexo.c:255:6: warning: unused variable 'auxiliar' [-Wunused-variable]
+  255 |  int auxiliar = 0;
+      |      ^~~~~~~~
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:38:57 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:40:01 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:45:15 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\eEmpleado.o" "..\\src\\eEmpleado.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+..\src\nexo.c: In function 'nexo_contar':
+..\src\nexo.c:253:6: warning: unused variable 'j' [-Wunused-variable]
+  253 |  int j;
+      |      ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_10-2.o" "..\\src\\ejercicio_10-2.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:45:42 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:47:35 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+..\src\nexo.c: In function 'nexo_contar':
+..\src\nexo.c:269:46: error: 'id' undeclared (first use in this function); did you mean 'i'?
+  269 |      printf("\nSector: %d\n", arraySector[i],id);
+      |                                              ^~
+      |                                              i
+..\src\nexo.c:269:46: note: each undeclared identifier is reported only once for each function it appears in
+22:47:45 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+Info: Nothing to build for ejercicio_10-2
+Info: Nothing to build for ejercicio_10-2
+22:50:25 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:52:10 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:52:50 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:55:52 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:56:18 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:57:05 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:57:30 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:58:01 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:58:38 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:59:05 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+22:59:52 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+23:01:10 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+23:01:58 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+23:02:30 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+23:03:16 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\eEmpleado.o" "..\\src\\eEmpleado.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+23:06:32 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+23:07:44 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+23:13:06 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_10-2.o" "..\\src\\ejercicio_10-2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\eEmpleado.o" "..\\src\\eEmpleado.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\eSector.o" "..\\src\\eSector.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+23:15:23 **** Incremental Build of configuration Debug for project ejercicio_10-2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nexo.o" "..\\src\\nexo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejercicio_10-2.o" "..\\src\\ejercicio_10-2.c" 
+gcc -o ejercicio_10-2.exe "src\\eEmpleado.o" "src\\eSector.o" "src\\ejercicio_10-2.o" "src\\general.o" "src\\nexo.o" 
+Info: Nothing to build for ejercicio_10-2
